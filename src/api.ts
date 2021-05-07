@@ -11,7 +11,6 @@ import isArray from "lodash/fp/isArray";
 import map from "lodash/fp/map";
 import matches from "lodash/fp/matches";
 import negate from "lodash/fp/negate";
-import set from "lodash/fp/set";
 import stubArray from "lodash/fp/stubArray";
 import stubTrue from "lodash/fp/stubTrue";
 import tap from "lodash/fp/tap";
@@ -80,7 +79,7 @@ const TAG_FAV = "favorites";
 const loadFavs = () => window.localStorage.getItem(TAG_FAV);
 const saveFavs = (json: string) => window.localStorage.setItem(TAG_FAV, json);
 export function useFavs(): [
-  T.Car[],
+  T.Car[] | undefined,
   (car: T.Car) => any,
   (stockNumber: T.Car["stockNumber"]) => any
 ] {

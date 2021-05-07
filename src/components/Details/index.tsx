@@ -115,7 +115,7 @@ export default function Details() {
           </Grid>
         </Grid>
         <Grid item xs={3}>
-          <FavoritesAdd car={details} />
+          <>{details && <FavoritesAdd car={details} />}</>
         </Grid>
       </Grid>
     </Grid>
